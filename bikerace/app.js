@@ -1,34 +1,30 @@
 window.onload=function(){
-var slowCyclist; 
-var fastCyclist;
 
-document.addEventListener('keydown', moveCyclist);
+	var slowCyclist = document.getElementById('slowCyclist');
+	//var fastCyclist;
 
-function moveCyclist(evt) {
-	switch (evt.keyCode) {
-	    case 186:
-	    semiColonPressed();
-	    break;
-	    case 222:
-	    singleQuotePressed();
-	    break;
-	    
+	document.addEventListener('keydown', moveCyclist);
+
+	function moveCyclist(e) {
+		e = e || window.event;
+		if (e.keyCode == '37') { //left arrow
+	    	moveLeft();
 	    }
-	}
+	    else if (e.keyCode == '39') { //right arrow
+	        moveRight();
+		}	
+	}	
 
-    
-function semiColonPressed() {
-	console.log("So, you've clicked the semicolon");
-    var slowCyclist = document.getElementById('lap1').appendChild(
-    document.getElementById('slowCyclist'));
-    }
+	function moveLeft() {
+	            slowCyclist.style.left = 300 - '20px';
+	                console.log("So, you've clicked the left arrow");
+	        }
+	 function moveRight() {
+	            slowCyclist.style.right = 300 + '20px';
+	                console.log("So, you've clicked the right arrow");
+	        }
 
-    function singleQuotePressed() {
-    console.log("So, you've clicked the singlequote");
-    var fastCyclist = document.getElementById("fastCyclist");
-    fastCyclist.style.left = parseInt(fastCyclist.style.left) + 5 + 'px';
+	    
 
-    }
-
-   
 };
+
