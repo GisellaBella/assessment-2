@@ -1,5 +1,6 @@
 
-body {
+
+	body {
 	margin:0;
 	background: url(background.jpg)no-repeat center center;
   	-webkit-background-size: cover;
@@ -12,10 +13,18 @@ body {
 	width: 200px;
     height: 200px;
     position: relative;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 270px;
 	}
 
+#fastCyclist {
+	img size: 80%;
+	width: 200px;
+    height: 200px;
+    position: relative;
+    margin-left: 15px;
+    margin-top: 230px;
+	}
 
 h1 {
 	font-size: 25px;
