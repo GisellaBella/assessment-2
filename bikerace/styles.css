@@ -1,13 +1,29 @@
 
 
-	body {
+body {
 	margin:0;
-	background: url(background.jpg)no-repeat center center;
-  	-webkit-background-size: cover;
- 	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
+	background-color: #CD773C;
 	}
+
+#horizontal-scroll {
+	  position:fixed;
+	width: 100%;  
+	height: auto;  
+	background: url(background.jpg) repeat-x;  
+	-webkit-animation: backgroundScroll 99999999s linear infinite;
+	animation: backgroundScroll 999999s linear infinite;  
+	}
+
+	@-webkit-keyframes backgroundScroll {
+	from {background-position: 0 650;}  
+	to {background-position: -99999999px 0;}  
+	}
+
+	@keyframes backgroundScroll {
+	from {background-position: 650 0;}  
+	to {background-position: -99999999px 0;}  
+	}
+
 
 #slowCyclist {
 	width: 200px;
@@ -18,17 +34,16 @@
 	}
 
 #fastCyclist {
-	img size: 80%;
 	width: 200px;
     height: 200px;
     position: relative;
     margin-left: 15px;
-    margin-top: 230px;
+    margin-top: 0px;
 	}
 
 h1 {
 	font-size: 25px;
 	font-weight: bold;
-}
+	}
 
 

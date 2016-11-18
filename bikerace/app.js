@@ -15,18 +15,27 @@ window.onload=function(){
 
 	    else if (e.keyCode == '38') { //up arrow
 	    slowGuyFaster();
-	    fastGuyWind();
 	    console.log("up arrow");
 	    }	
 
+	    else if (e.keyCode == '16') { //shift key
+	    slowGuyWind();   	    
+	    console.log("right arrow");
+		}
+		
 	   	 else if (e.keyCode == '39') { //right arrow
 	    fastGuy();
 	    slowGuyWind();   	    
 	    console.log("right arrow");
 		}
 		
+	    else if (e.keyCode == '13') { //return key
+	    fastGuyWind();
+	    console.log("return key");
+	    }
+
 		 else if (e.keyCode == '40') { //down arrow
-	        fastGuyFaster();    	    
+	    fastGuyFaster();    	    
 	    console.log("down arrow");
 		}		
 	}	
