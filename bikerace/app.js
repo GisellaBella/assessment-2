@@ -25,7 +25,6 @@ window.onload=function(){
 		
 	   	 else if (e.keyCode == '39') { //right arrow
 	    fastGuy();
-	    slowGuyWind();   	    
 	    console.log("right arrow");
 		}
 		

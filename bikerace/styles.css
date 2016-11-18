@@ -6,7 +6,7 @@ body {
 	}
 
 #horizontal-scroll {
-	  position:fixed;
+	position:fixed;
 	width: 100%;  
 	height: auto;  
 	background: url(background.jpg) repeat-x;  
@@ -24,26 +24,38 @@ body {
 	to {background-position: -99999999px 0;}  
 	}
 
+/*.stacked {
+position: relative;
+}*/
 
 #slowCyclist {
-	width: 200px;
-    height: 200px;
-    position: relative;
-    margin-left: 0px;
-    margin-top: 270px;
+	width:200px;
+    height: auto;
+    /*position: relative;
+    margin-left: 0px;*/
+    margin-top: 150px;
+    position: relative; 
+	z-index: 2;
 	}
 
 #fastCyclist {
-	width: 200px;
-    height: 200px;
-    position: relative;
-    margin-left: 15px;
+	width:200px;
+    height: auto;
+      /*position: relative;
+    margin-left: 0px;*/
     margin-top: 0px;
+    position: relative;
+    z-index: 1;
 	}
 
 h1 {
 	font-size: 25px;
 	font-weight: bold;
+	font-family: 'Abril Fatface', cursive;
+	text-align: center;
+	margin: auto;
+	padding: 20px;
+	color: red;
 	}
 
 
