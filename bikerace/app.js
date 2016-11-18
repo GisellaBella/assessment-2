@@ -1,6 +1,6 @@
 window.onload=function(){
 
-	var slowCyclist = document.getElementById('slowCyclist');
+	var slowCyclist = document.getElementById("slowCyclist");
 	//var fastCyclist;
 
 	document.addEventListener('keydown', moveCyclist);
@@ -14,17 +14,22 @@ window.onload=function(){
 	        moveRight();
 		}	
 	}	
+	moveCyclist();
 
 	function moveLeft() {
-	            slowCyclist.style.left = 300 - '20px';
-	                console.log("So, you've clicked the left arrow");
-	        }
-	 function moveRight() {
-	            slowCyclist.style.right = 300 + '20px';
-	                console.log("So, you've clicked the right arrow");
-	        }
+		var margin = 20;
+		margin --;//moving left
+		document.getElementById("slowCyclist").style.marginLeft = margin - "px";
+		}
 
-	    
+	           
+	 function moveRight() {
+	 	var margin = 20;
+		margin ++;//moving left
+	    document.getElementById("slowCyclist").style.marginLeft = margin + "px";
+	    console.log("So, you've clicked the right arrow");
+		}
+	        
+
 
 };
-

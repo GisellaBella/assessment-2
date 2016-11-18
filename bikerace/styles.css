@@ -8,12 +8,12 @@ body {
   	background-size: cover;
 	}
 
-img.slowCyclist {
-	width: 100px;
-    height: 100px;
-    margin: 0px;
-    position: absolute;
-	right: 23px;
+#slowCyclist {
+	width: 200px;
+    height: 200px;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 270px;
 	}
 
 
