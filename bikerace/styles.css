@@ -5,12 +5,13 @@ body {
 	background-color: #CD773C;
 	}
 
+/*background endless animation*/
 #horizontal-scroll {
 	position:fixed;
-	width: 100%;  
-	height: auto;  
+	width: 1280px;  
+	height: 400px;  
 	background: url(background.jpg) repeat-x;  
-	-webkit-animation: backgroundScroll 99999999s linear infinite;
+	-webkit-animation: backgroundScroll 99999999s linear infinite; /*control speed here*/
 	animation: backgroundScroll 999999s linear infinite;  
 	}
 
@@ -24,28 +25,20 @@ body {
 	to {background-position: -99999999px 0;}  
 	}
 
-/*.stacked {
-position: relative;
-}*/
-
+#wrapper {
+	position: relative;
+    width: 100%;
+	}
+	
 #slowCyclist {
-	width:200px;
-    height: auto;
-    /*position: relative;
-    margin-left: 0px;*/
-    margin-top: 150px;
+    margin-top:-50px;
     position: relative; 
-	z-index: 2;
+
 	}
 
 #fastCyclist {
-	width:200px;
-    height: auto;
-      /*position: relative;
-    margin-left: 0px;*/
-    margin-top: 0px;
-    position: relative;
-    z-index: 1;
+	margin-top:100px;
+    position: relative
 	}
 
 h1 {
@@ -57,5 +50,4 @@ h1 {
 	padding: 20px;
 	color: red;
 	}
-
 
