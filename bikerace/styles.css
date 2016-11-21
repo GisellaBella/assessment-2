@@ -1,18 +1,38 @@
 
-
 body {
-	margin:0;
-	background-color: #CD773C;
+      margin: auto;
+    vertical-align: middle;/* backgorund color that blends into the sliding graphic */
+    background-color: #CD773C;
+}
+h1 {
+	font-size: 25px;
+	font-weight: bold;
+	font-family: 'Abril Fatface', cursive;
+	text-align: center;
+	margin: auto;
+	padding: 20px;
+	color: red;
+	}
+h2 {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: 'Abril Fatface', cursive;
+	text-align: center;
+	margin-top:5px;
+	padding: 0px;
+	color: #171717;
 	}
 
-/*background endless animation*/
+
+/*background-endless animation*/
 #horizontal-scroll {
 	position:fixed;
-	width: 1280px;  
-	height: 400px;  
+	width: 1200px;  
+	height: 500px;  
 	background: url(background.jpg) repeat-x;  
 	-webkit-animation: backgroundScroll 99999999s linear infinite; /*control speed here*/
-	animation: backgroundScroll 999999s linear infinite;  
+	animation: backgroundScroll 999999s linear infinite;
+	text-align: center; 
 	}
 
 	@-webkit-keyframes backgroundScroll {
@@ -25,29 +45,48 @@ body {
 	to {background-position: -99999999px 0;}  
 	}
 
-#wrapper {
-	position: relative;
-    width: 100%;
-	}
-	
-#slowCyclist {
-    margin-top:-50px;
-    position: relative; 
+#winners {
+	display: none;
+	height: 100%;
+	width: 1200px;
+	background-color: #;
+	background: #C2CEEF; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left top, #C2CEEF, #E3EBFF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #C2CEEF, #E3EBFF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right,#C2CEEF, #E3EBFF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #C2CEEF, #E3EBFF); /* Standard syntax */
+	padding: 20px;
+}	
+.myBtn {/*race again button */
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #048508;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
 
-	}
+.myBtn:hover {
+  background: #265222;
+  text-decoration: none;
+}
+#slowCyclist {
+	position: relative;
+    width: 100px;
+    margin-top: 90px;
+	} 
 
 #fastCyclist {
-	margin-top:100px;
-    position: relative
+	position: relative;
+    width: 100px;
+    margin-top: 0px;
 	}
+#racers {
+	display: block;
 
-h1 {
-	font-size: 25px;
-	font-weight: bold;
-	font-family: 'Abril Fatface', cursive;
-	text-align: center;
-	margin: auto;
-	padding: 20px;
-	color: red;
-	}
+}
+
 

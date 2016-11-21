@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<!--Racer Game -Gisella Walter javascript Dom Manipulation Fun (GA WDI november 2016)-->
 <head>
 	<title>The Giro d'Javascript</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,22 +12,33 @@
 <body>
 <script type="text/javascript" src="app.js"></script>
 
-<div id = "horizontal-scroll"> 
+<div id = "horizontal-scroll"> <!--scrolling background found here-->
 
-<h1> The Giro d'Javascript </h1>
+	<h1> The Giro d'Javascript </h1>
 
-<div id = "wrapper"> 
-	    <div id="slowCyclist">
-	    	<img src = "bike-slow.gif" width=150px height=auto>
-	 	</div>
-	 	<div id="fastCyclist">
-	    	<img src = "bike-fast.gif" width= 200px height=auto>
-	    </div>
+		<div id = "winners"> <!--winner box -->
+		<h2>The winner!!!!</h2>
+		<br>
+		<img src = "flag.gif" width=345px height=345px >
+		<br>
+		<br>
+		<a class="myBtn" id="myBtn">Race Again</a>
+		
+
+		</div>
+
+		<div id ="racers"> <!-- Div that contains racers -->
+
+			<div id="slowCyclist"> <!--divs for the cyclists found here. -->
+				<img src = "bike-slow.gif" width="150px" height=auto>
+			</div>
+			<div id="fastCyclist">
+			    <img src = "bike-fast.gif" width="150px" height=auto>
+			</div>
+
+		</div>
+
 </div>
-
-
-
-  </div>
-
+<script type="text/javascript" src="app.js"></script>
 </body>
 </html>

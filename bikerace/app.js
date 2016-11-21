@@ -1,5 +1,15 @@
 window.onload=function() {
-// make sure document is loaded before running js
+
+function greet(){//checking local storage to make sure 
+	//they havent already seen simplistic isntructions on how to play game.
+	var alerted = localStorage.getItem('alerted') || '';
+    if (alerted != 'yes') {
+     alert("Let's Race!\nTap your up & right arrow keys\nto move your cyclist.");
+     localStorage.setItem('alerted','yes');
+ 	}
+ }//end of greet function	
+
+greet();//calling greet
 
 // checking that JS file is attached to HTML 
 console.log("Javascript is working!");
@@ -8,121 +18,77 @@ console.log("Javascript is working!");
 	var slowCyclist = document.getElementById("slowCyclist");
 	var fastCyclist = document.getElementById("fastCyclist");
 
-	document.addEventListener('keydown', moveCyclist);
+	var block = document.getElementById("racers").style.display ='block';
+
+	document.addEventListener('keydown', function() {
+	//adding the event listener to functions at Global level.
+     moveCyclist();
+     detectWinner();
+	});
+
+
 	//Moving the Cyclists with Keyfunctions
 	function moveCyclist(e) {
+	
 			e = e || window.event;
-
-
 			if (e.keyCode == '38') { //up arrow
-		    slowGuyFaster();	 
+		    slowGuy();	 
 			console.log("up arrow");
 		    }
-
-		     else if (e.keyCode == '39') { //right arrow
-		    fastGuyFaster();   
-		    console.log("right arrow");
-			}
-	}
-
-	document.addEventListener('keyup', detectWinner); //Had to create a keyup event because when I called the detectwinner function in moveCyclist function it was behaving rather oddly. Linking the two divs, adding margin to both fastracer and slowracer.
-	
-	/* For now keeping the speed and racer function simple- to 2 keys, so commenting out additional key functions.
-
-		    else if (e.keyCode == '37') { //left arrow
-		    slowGuy();
-		    detectWinner();
-		    console.log("up arrow");
-		    }	
-
-		    else if (e.keyCode == '16') { //shift key
-		    slowGuyWind();
-		    detectWinner();  	    
-		    console.log("right arrow");
-			}
-			
-		   	 else if (e.keyCode == '') { //right arrow
+		    else if (e.keyCode == '39') { //right arrow
 		    fastGuy();
-		    detectWinner();
 		    console.log("right arrow");
 			}
-			
-		    else if (e.keyCode == '') { //return key
-		    fastGuyWind();
-		    detectWinner();
-		    console.log("return key");
-		    }
+	}
 
-				
-	function slowGuy() {
-		margin = margin+5;
-		margin ++;//moving right
+	function slowGuy() {//resetting slowguys left margin which controls his advancement across screen
+		margin = margin+20;
+		margin ++;//right arrow
 		document.getElementById("slowCyclist").style.marginLeft = margin + "px";
-		}           
-	 
-	function fastGuy() {
-		margin = margin+2;
-		margin ++;//moving right
-		document.getElementById("fastCyclist").style.marginLeft = margin + "px";
-		}
-
-	
-	function fastGuyWind(){
-		margin = margin-5;
-		margin ++;//loses speed
-		document.getElementById("fastCyclist").style.marginLeft = margin + "px";
-		}
-
-	function slowGuyWind() {
-		margin = margin-2;
-		margin ++;//loses speed
-		document.getElementById("slowCyclist").style.marginLeft = margin + "px";
-		}     
-*/
-
-
-function slowGuyFaster() {
-	 	margin = margin+15;
-		margin ++;//moving right
-		document.getElementById("slowCyclist").style.marginLeft = margin + "px";
+		//console.log (slowguy);
 		return margin;
-		}
+	}
 
-function fastGuyFaster() {
-		margin = margin+15;
-		margin ++;//moving right
+	function fastGuy() {//resetting fastguys left margin which controls his advancement across screen
+		margin = margin+20;
+		margin ++;//right arrow
 		document.getElementById("fastCyclist").style.marginLeft = margin + "px";
 		return margin;
+	}
+
+	function detectWinner(e) { //comparing fastguy and slowguys margin width, against race canvas size to determine winner.)
+		console.log (fastGuy(), slowGuy()); //checkign to make sure i get the uptodate margin values for each.
+		if (fastGuy() >= 850) { //checking for winner
+		console.log ("winner = the fastGuy");
+		raceOver();
+		return (winner = fastGuy);//later- to add some sort of scoring
 		}
 
-function detectWinner() {
-	//console.log (fastGuyFaster(), slowGuyFaster());
-	if (fastGuyFaster() >=900) {
-	//console.log ("winner = fastGuyFaster");
-	raceOver();
-	return (winner = fastGuyFaster);
-	}
-	else if (slowGuyFaster()>=900) {
-	//console.log ("winner = slowGuyFaster");
-	return (winner = slowGuyFaster);
-	}
-	else 
-	return;
+		else if (slowGuy() >= 850) {
+		console.log ("winner = slowGuy");
+		raceOver();
+		return (winner = slowGuy);
+		}
+
+		else 
+		return;
 	}
 
-function raceOver () {
-	console.log ("race over");
-
-
-}
+	function raceOver () {
+		console.log ("race over");
+        document.getElementById("racers").style.display ='none';
+        document.getElementById("winners").style.display ='block';
+       	var cheer = new Audio('crowdcheer.wav');
+     	cheer.play();
+    	cheer.loop = false;
+	}
 	
- 	//replay/reset
-		//$('#reset').on('click', function() {
-		//	$('.plant').css('left', 0);
-		//	$('.info span').text('');
-		//});
+ 	var myBtn = document.getElementById("myBtn").addEventListener("click", resetRace, false);
 
-	//document.addEventListener('click', replayGame);
+ 	function resetRace () {
+		console.log ("race reset");
+		location.reload();
 
+ }
 
 };
